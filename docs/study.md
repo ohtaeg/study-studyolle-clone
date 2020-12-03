@@ -5,6 +5,7 @@
 1. @Lob
 2. CLOB, BLOB 차이
 3. @Basic(fetch = FetchType.EAGER)
+4. JSR 303
 
 <br>
 
@@ -41,4 +42,10 @@
         - false : null을 허용하지 않는다. == Not Null
         - true : null을 허용
                 
-  
+<br>
+
+### 4. JSR 303
+- Java Specification Request. 자바 스펙 요구서로써 303은 Java Bean Validation에 관한 내용을 담고 있음.
+- @Valid는 스프링이 만든 기술은 아니며 최근 JSR-303이란 이름으로 채택된 서블릿 2.3 표준스펙 중 하나
+- @Valid는 그동안 논란이 되왔던, 검증모델이 프리젠테이션 계층에 위치해야 되는지, 서비스 계층에 위치해야 하는지에 대한 논란을 어느 정도 통일시켜주는 표준기술이다. 
+- 도메인 계층에 삽입할 수 있게 하였다. 즉 @Valid는 아예 원천적으로 등록 오류를 피하기 위해 객체 자체에 검증모델 주입하는 방식을 채택하고 있다.
